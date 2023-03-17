@@ -1,44 +1,43 @@
-package com.codegym.model;
+package com.codegym.dto;
 
-import javax.persistence.*;
+import com.codegym.model.DiemDen;
+import com.codegym.model.DiemDi;
+import com.codegym.model.LoaiXe;
+import com.codegym.model.NhaXe;
 
-@Entity
-public class BenXe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import javax.validation.constraints.NotBlank;
+
+public class BenXeDto {
     private Integer id;
-    @Column(unique = true)
+    @NotBlank(message = "Không được để trống")
     private Integer maXe;
-    @Column(unique = true)
+    @NotBlank(message = "Không được để trống")
     private String phone;
-    @Column(unique = true)
+    @NotBlank(message = "Không được để trống")
     private String email;
     private Integer gioDi;
     private Integer gioDen;
     private boolean flagDelete = false;
-    @ManyToOne
-    @JoinColumn(name = "diem_den_id", referencedColumnName = "id")
     private DiemDen diemDen;
-
-    @ManyToOne
-    @JoinColumn(name = "diem_di_id", referencedColumnName = "id")
     private DiemDi diemDi;
-    @ManyToOne
-    @JoinColumn(name = "loai_xe_id", referencedColumnName = "id")
     private LoaiXe loaiXe;
-    @ManyToOne
-    @JoinColumn(name = "nha_xe_id", referencedColumnName = "id")
     private NhaXe nhaXe;
 
-    public BenXe() {
+    public BenXeDto() {
     }
 
-    public boolean isFlagDelete() {
-        return flagDelete;
-    }
-
-    public void setFlagDelete(boolean flagDelete) {
+    public BenXeDto(Integer id, Integer maXe, String phone, String email, Integer gioDi, Integer gioDen, boolean flagDelete, DiemDen diemDen, DiemDi diemDi, LoaiXe loaiXe, NhaXe nhaXe) {
+        this.id = id;
+        this.maXe = maXe;
+        this.phone = phone;
+        this.email = email;
+        this.gioDi = gioDi;
+        this.gioDen = gioDen;
         this.flagDelete = flagDelete;
+        this.diemDen = diemDen;
+        this.diemDi = diemDi;
+        this.loaiXe = loaiXe;
+        this.nhaXe = nhaXe;
     }
 
     public Integer getId() {
@@ -87,6 +86,14 @@ public class BenXe {
 
     public void setGioDen(Integer gioDen) {
         this.gioDen = gioDen;
+    }
+
+    public boolean isFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(boolean flagDelete) {
+        this.flagDelete = flagDelete;
     }
 
     public DiemDen getDiemDen() {

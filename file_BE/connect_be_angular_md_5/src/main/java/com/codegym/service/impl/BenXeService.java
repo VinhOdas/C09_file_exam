@@ -34,4 +34,14 @@ public class BenXeService implements IBenXeService {
     public void deleteBenXe(Integer id) {
         benXeRepository.deleteBenXe(id);
     }
+
+    @Override
+    public void editBenXe(BenXe benXe) {
+        benXeRepository.editBenXe(benXe);
+    }
+
+    @Override
+    public void addBenXe(BenXe benXe) {
+        benXeRepository.addBenXe(benXe);
+    }
 }

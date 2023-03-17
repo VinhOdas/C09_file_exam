@@ -9,6 +9,7 @@ import {LoaiXeService} from "../../service/loai-xe.service";
 import {NhaXeService} from "../../service/nha-xe.service";
 import {DiemDiService} from "../../service/diem-di.service";
 import {DiemDenService} from "../../service/diem-den.service";
+import {BenXe} from "../../model/ben-xe";
 
 @Component({
   selector: 'app-them-ben-xe',
@@ -17,6 +18,7 @@ import {DiemDenService} from "../../service/diem-den.service";
 })
 export class ThemBenXeComponent implements OnInit {
   addFormReactive: FormGroup;
+  benXeList: BenXe[] = [];
   loaiXeList: LoaiXe[] = [];
   nhaXeList: NhaXe[] = [];
   diemDiList: DiemDi[] = [];
@@ -49,6 +51,9 @@ export class ThemBenXeComponent implements OnInit {
     this.getAllLoaiXe()
     this.getAllDiemDi()
     this.getAllDiemDen()
+    this.benXeService.getList().subscribe(next =>{
+      this.benXeList = next;
+    })
   }
 
   getAllLoaiXe(){
@@ -91,6 +96,14 @@ export class ThemBenXeComponent implements OnInit {
          alert('Chỉnh  sửa thất bai');
        }
      })
-
   }
+
+  checkMaXe(ma: number) {
+    for (let i = 0; i < this.benXeList.length; i++) {
+      if (this.benXeList[i].maXe == ma) {
+        this.addFormReactive.controls.maXe.setErrors({'invalid': true})
+      }
+    }
+  }
+
 }

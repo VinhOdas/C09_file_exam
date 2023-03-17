@@ -1,4 +1,4 @@
-<body class="d-flex flex-column" >
+<body class="d-flex flex-column">
 <app-header></app-header>
 <app-navigation></app-navigation>
 
@@ -10,118 +10,129 @@
         <div class="card-header">
           <strong id="inDam"><h1 class="card-title" style="color: red">Edit Ben Xe</h1></strong>
         </div>
-<form style="background: aquamarine" [formGroup]="editFormBenXe" (ngSubmit)="submitEditBenXe()" >
+        <form style="background: aquamarine" [formGroup]="editFormBenXe" (ngSubmit)="submitEditBenXe()">
+          <input formControlName="id" type="hidden">
           <div class="card-body">
             <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-      </div>
+            </div>
             <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-              <label class="form-label" >Mã Xe</label>
+              <label class="form-label">Mã Xe</label>
               <div class="input-group input-group-merge">
                 <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="maXe"
-                       formControlName="maXe" >
+                       formControlName="maXe">
 
               </div>
               <span style="color: red" *ngIf="editFormBenXe.controls.maXe.hasError('required')">Khong dc de trong</span>
 
             </div>
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" for="loaiXe">loai xe :</label>
-        <select class="form-select" id="loaiXe" formControlName="loaiXe" [compareWith]="compareWith">
-          <option value="">----</option>
-          <option *ngFor="let item of loaiXeList"  [ngValue]="item">
-            {{item.name}}
-          </option>
-        </select>
-        <span style="color: red" *ngIf="editFormBenXe.controls.loaiXe.hasError('required')">Khong dc de trong</span>
-      </div>
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" for="nhaXe">nha xe :</label>
-        <select class="form-select" id="nhaXe" formControlName="nhaXe" [compareWith]="compareWithnhaXe">
-          <option value="">----</option>
-          <option *ngFor="let item of nhaXeList"  [ngValue]="item">
-            {{item.name}}
-          </option>
-        </select>
-        <span style="color: red" *ngIf="editFormBenXe.controls.nhaXe.hasError('required')">Khong dc de trong</span>
+            <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+              <label class="form-label" for="loaiXe">loai xe :</label>
+              <select class="form-select" id="loaiXe" formControlName="loaiXe" [compareWith]="compareWith">
+                <option value="">----</option>
+                <option *ngFor="let item of loaiXeList" [ngValue]="item">
+                  {{item.name}}
+                </option>
+              </select>
+              <span style="color: red"
+                    *ngIf="editFormBenXe.controls.loaiXe.hasError('required')">Khong dc de trong</span>
+            </div>
+            <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+              <label class="form-label" for="nhaXe">nha xe :</label>
+              <select class="form-select" id="nhaXe" formControlName="nhaXe" [compareWith]="compareWithnhaXe">
+                <option value="">----</option>
+                <option *ngFor="let item of nhaXeList" [ngValue]="item">
+                  {{item.name}}
+                </option>
+              </select>
+              <span style="color: red"
+                    *ngIf="editFormBenXe.controls.nhaXe.hasError('required')">Khong dc de trong</span>
 
-      </div>
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" for="diemDi">diem di:</label>
-        <select class="form-select" id="diemDi" formControlName="diemDi" [compareWith]="compareWithdiemDi">
-          <option value="">----</option>
-          <option *ngFor="let item of diemDiList"  [ngValue]="item">
-            {{item.name}}
-          </option>
-        </select>
-        <span style="color: red" *ngIf="editFormBenXe.controls.diemDi.hasError('required')">Khong dc de trong</span>
+            </div>
+            <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+              <label class="form-label" for="diemDi">diem di:</label>
+              <select class="form-select" id="diemDi" formControlName="diemDi" [compareWith]="compareWithdiemDi">
+                <option value="">----</option>
+                <option *ngFor="let item of diemDiList" [ngValue]="item">
+                  {{item.name}}
+                </option>
+              </select>
+              <span style="color: red"
+                    *ngIf="editFormBenXe.controls.diemDi.hasError('required')">Khong dc de trong</span>
 
-      </div>
+            </div>
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" for="diemDen">diem den :</label>
-        <select class="form-select" id="diemDen" formControlName="diemDen" [compareWith]="compareWithdiemDen">
-          <option value="">----</option>
-          <option *ngFor="let item of diemDenList"  [ngValue]="item">
-            {{item.name}}
-          </option>
-        </select>
-        <span style="color: red" *ngIf="editFormBenXe.controls.diemDen.hasError('required')">Khong dc de trong</span>
+            <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+              <label class="form-label" for="diemDen">diem den :</label>
+              <select class="form-select" id="diemDen" formControlName="diemDen" [compareWith]="compareWithdiemDen">
+                <option value="">----</option>
+                <option *ngFor="let item of diemDenList" [ngValue]="item">
+                  {{item.name}}
+                </option>
+              </select>
+              <span style="color: red"
+                    *ngIf="editFormBenXe.controls.diemDen.hasError('required')">Khong dc de trong</span>
 
-      </div>
+            </div>
 
-    <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+            <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" >phone</label>
-        <div class="input-group input-group-merge">
-          <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="phone"
-                 formControlName="phone" >
-        </div>
-        <span style="color: red" *ngIf="editFormBenXe.controls.phone.hasError('required')">Khong dc de trong</span>
-        <span style="color: red" *ngIf="editFormBenXe.controls.phone.hasError('minlength')">it nhat 4 so</span>
-        <span style="color: red" *ngIf="editFormBenXe.controls.phone.hasError('maxlength')">nhieu nhat 9 so</span>
+              <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+                <label class="form-label">phone</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="phone"
+                         formControlName="phone">
+                </div>
+                <span style="color: red"
+                      *ngIf="editFormBenXe.controls.phone.hasError('required')">Khong dc de trong</span>
+                <span style="color: red" *ngIf="editFormBenXe.controls.phone.hasError('minlength')">it nhat 4 so</span>
+                <span style="color: red"
+                      *ngIf="editFormBenXe.controls.phone.hasError('maxlength')">nhieu nhat 9 so</span>
 
-      </div>
+              </div>
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" >email</label>
-        <div class="input-group input-group-merge">
-          <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="email"
-                 formControlName="email" >
-        </div>
-        <span style="color: red" *ngIf="editFormBenXe.controls.email.hasError('required')">Khong dc de trong</span>
-        <span style="color: red" *ngIf="editFormBenXe.controls.email.hasError('email')"> phai dung dinh dang</span>
+              <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+                <label class="form-label">email</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="email"
+                         formControlName="email">
+                </div>
+                <span style="color: red"
+                      *ngIf="editFormBenXe.controls.email.hasError('required')">Khong dc de trong</span>
+                <span style="color: red"
+                      *ngIf="editFormBenXe.controls.email.hasError('email')"> phai dung dinh dang</span>
 
-      </div>
+              </div>
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" >gioDi</label>
-        <div class="input-group input-group-merge">
-          <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="gioDi"
-                 formControlName="gioDi" >
-        </div>
-        <span style="color: red" *ngIf="editFormBenXe.controls.gioDi.hasError('required')">Khong dc de trong</span>
+              <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+                <label class="form-label">gioDi</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="gioDi"
+                         formControlName="gioDi">
+                </div>
+                <span style="color: red"
+                      *ngIf="editFormBenXe.controls.gioDi.hasError('required')">Khong dc de trong</span>
 
-      </div>
+              </div>
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
-        <label class="form-label" >gioDen</label>
-        <div class="input-group input-group-merge">
-          <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="gioDen"
-                 formControlName="gioDen" >
-          <span style="color: red" *ngIf="editFormBenXe.controls.gioDen.hasError('required')">Khong dc de trong</span>
+              <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+                <label class="form-label">gioDen</label>
+                <div class="input-group input-group-merge">
+                  <input type="text" class="form-control phone-number-mask" placeholder="Input Name" id="gioDen"
+                         formControlName="gioDen">
+                  <span style="color: red"
+                        *ngIf="editFormBenXe.controls.gioDen.hasError('required')">Khong dc de trong</span>
 
-        </div>
-      </div>
+                </div>
+              </div>
 
-      <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
+              <div class="col-xl-12 col-md-12 col-sm-12 mb-2">
 
-        <button class="btn btn-danger" type="submit">Edit</button>
-      </div>
+                <button class="btn btn-danger" type="submit">Edit</button>
+              </div>
 
-    </div>
-  </div>
-</form>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <div class="col-md-3"></div>

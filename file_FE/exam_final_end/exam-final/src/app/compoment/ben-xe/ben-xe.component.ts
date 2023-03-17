@@ -1,14 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BenXe} from "../../model/ben-xe";
-import {LoaiXe} from "../../model/loai-xe";
-import {NhaXe} from "../../model/nha-xe";
-import {DiemDi} from "../../model/diem-di";
 import {BenXeService} from "../../service/ben-xe.service";
-import {Router} from "@angular/router";
-import {LoaiXeService} from "../../service/loai-xe.service";
-import {NhaXeService} from "../../service/nha-xe.service";
-import {DiemDiService} from "../../service/diem-di.service";
-import {DiemDenService} from "../../service/diem-den.service";
 
 @Component({
   selector: 'app-ben-xe',
@@ -16,8 +8,7 @@ import {DiemDenService} from "../../service/diem-den.service";
   styleUrls: ['./ben-xe.component.css']
 })
 export class BenXeComponent implements OnInit {
-  benXeList: BenXe[] = [];
-
+  benXeList: any;
   remove: BenXe = {};
 
 
@@ -35,7 +26,7 @@ export class BenXeComponent implements OnInit {
 
 
   getAllBenXe(){
-    this.benXeService.findAll().subscribe(data=>{
+    this.benXeService.findAll(0).subscribe(data=>{
       this.benXeList = data
     })
 
@@ -52,6 +43,18 @@ export class BenXeComponent implements OnInit {
       }else {
         alert('thu lai')
       }
+    })
+  }
+
+  previousPage() {
+    this.benXeService.findAll(this.benXeList['number'] - 1).subscribe(next => {
+      this.benXeList = next;
+    })
+  }
+
+  nextPage() {
+    this.benXeService.findAll(this.benXeList['number'] + 1).subscribe(next => {
+      this.benXeList = next;
     })
   }
 }

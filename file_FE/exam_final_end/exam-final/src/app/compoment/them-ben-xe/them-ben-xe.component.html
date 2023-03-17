@@ -23,6 +23,7 @@
 
               </div>
               <span style="color: red" *ngIf="addFormReactive.controls.maXe.hasError('required')">Khong dc de trong</span>
+              <span style="color: red" *ngIf="addFormReactive.controls.maXe.hasError('invalid') && addFormReactive.controls.maXe.touched">Đã tồn tại mã xe này</span>
 
             </div>
             <div class="col-xl-12 col-md-12 col-sm-12 mb-2">

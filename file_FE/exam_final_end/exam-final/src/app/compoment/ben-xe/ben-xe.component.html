@@ -20,8 +20,8 @@
     </thead>
     <tbody>
 
-    <tr  *ngFor="let item of benXeList; let i = index" >
-      <td>{{i + 1}}</td>
+    <tr *ngFor="let item of benXeList['content']; let i = index">
+      <td>{{i + 1 + benXeList.number * benXeList.size}}</td>
       <td>{{item.maXe}}</td>
       <td>{{item.loaiXe?.name}}</td>
       <td>{{item.nhaXe?.name}}</td>
@@ -33,15 +33,31 @@
       <td>{{item.gioDen}}</td>
       <td>
         <button class="btn btn-danger">
-          <a  routerLink="/benXe/edit/{{item.id}}">Edit</a>
+          <a routerLink="/benXe/edit/{{item.id}}">Edit</a>
         </button>
       </td>
-      <td> <button type="button" (click)="remove = item" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Delete
-      </button></td>
+      <td>
+        <button type="button" (click)="remove = item" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+          Delete
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>
+  <nav aria-label="Page navigation example" style="float: right;margin-right: 10px; margin-top: 10px">
+    <ul class="pagination">
+      <li class="page-item">
+        <button class="page-link" (click)="previousPage()">Trang trước</button>
+      </li>
+      <li class="page-item">
+        <p style="font-weight: bold" class="page-link">{{benXeList['number'] + 1}}</p>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="nextPage()">Trang sau</button>
+      </li>
+    </ul>
+  </nav>
 
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -53,10 +69,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <span>Do you want to delete so Xe </span><span style="color: red">{{remove.maXe}}</span ><span>?</span>
+          <span>Do you want to delete so Xe </span><span style="color: red">{{remove.maXe}}</span><span>?</span>
         </div>
         <div class="modal-footer">
-          <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" (click)="deleteXe()" data-bs-dismiss="modal" class="btn btn-danger">
             Xóa
           </button>

@@ -15,4 +15,8 @@ public interface IBenXeService {
     BenXe findBenXeById(Integer id);
 
     void deleteBenXe(Integer id);
+
+    void editBenXe(BenXe benXe);
+
+    void addBenXe(BenXe benXe);
 }
