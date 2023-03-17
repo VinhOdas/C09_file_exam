@@ -1,0 +1,167 @@
+{
+  "benXe": [
+    {
+      "id": 2,
+      "maXe": "879898908",
+      "loaiXe": {
+        "id": 1,
+        "name": "Xe Khách"
+      },
+      "nhaXe": {
+        "id": 3,
+        "name": "Ho Hai"
+      },
+      "điemDi": {
+        "id": 3,
+        "name": "Da Nang"
+      },
+      "phone": "111111",
+      "email": "gamquangvinh@gmail.com",
+      "gioDi": "222",
+      "gioDen": 2,
+      "diemDi": {
+        "id": 1,
+        "name": "HCM"
+      },
+      "diemDen": {
+        "id": 3,
+        "name": "Da Nang"
+      }
+    },
+    {
+      "id": 3,
+      "maXe": 23123,
+      "loaiXe": {
+        "id": 2,
+        "name": "Xe For"
+      },
+      "nhaXe": {
+        "id": 3,
+        "name": "Ho Hai"
+      },
+      "điemDi": {
+        "id": 3,
+        "name": "Da Nang"
+      },
+      "phone": "111111",
+      "email": "gamquangvinh@gmail.com",
+      "gioDi": 1,
+      "gioDen": 2,
+      "diemDi": {
+        "id": 3,
+        "name": "Da Nang"
+      },
+      "diemDen": {
+        "id": 3,
+        "name": "Da Nang"
+      }
+    },
+    {
+      "id": 4,
+      "loaiXe": {
+        "id": 2,
+        "name": "Xe For"
+      },
+      "nhaXe": {
+        "id": 3,
+        "name": "Ho Hai"
+      },
+      "điemDi": {
+        "id": 3,
+        "name": "Da Nang"
+      },
+      "phone": "111111",
+      "email": "gamquangvinh@gmail.com",
+      "gioDi": 1,
+      "gioDen": 2,
+      "diemDi": {
+        "id": 3,
+        "name": "Da Nang"
+      },
+      "diemDen": {
+        "id": 3,
+        "name": "Da Nang"
+      }
+    },
+    {
+      "id": 5,
+      "loaiXe": {
+        "id": 1,
+        "name": "Xe Khách"
+      },
+      "nhaXe": {
+        "id": 2,
+        "name": "Hai Ha"
+      },
+      "diemDi": {
+        "id": 2,
+        "name": "Ha Noi"
+      },
+      "diemDen": {
+        "id": 2,
+        "name": "Ha Noi"
+      },
+      "phone": "21213123",
+      "email": "gamquangvinh@gmail.com",
+      "gioDi": "222",
+      "gioDen": "2",
+      "maXe": null
+    }
+  ],
+  "loaiXe": [
+    {
+      "id": 1,
+      "name": "Xe Khách"
+    },
+    {
+      "id": 2,
+      "name": "Xe For"
+    },
+    {
+      "id": 3,
+      "name": "Xe Khách Giuong Nam"
+    }
+  ],
+  "nhaXe": [
+    {
+      "id": 1,
+      "name": "Trung Tin"
+    },
+    {
+      "id": 2,
+      "name": "Hai Ha"
+    },
+    {
+      "id": 3,
+      "name": "Ho Hai"
+    }
+  ],
+  "diemDi": [
+    {
+      "id": 1,
+      "name": "HCM"
+    },
+    {
+      "id": 2,
+      "name": "Ha Noi"
+    },
+    {
+      "id": 3,
+      "name": "Da Nang"
+    }
+  ],
+  "diemDen": [
+    {
+      "id": 1,
+      "name": "HCM"
+    },
+    {
+      "id": 2,
+      "name": "Ha Noi"
+    },
+    {
+      "id": 3,
+      "name": "Da Nang"
+    }
+  ]
+}
